@@ -9,7 +9,8 @@
         */
         public string ReturnName()
         {
-            return null;
+            string hello = "Victor";
+            return hello;
         }
     }
 }
