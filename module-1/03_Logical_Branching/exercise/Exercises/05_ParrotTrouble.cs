@@ -12,7 +12,15 @@
          */
         public bool ParrotTrouble(bool talking, int hour)
         {
-            return false;
+            if ((talking && hour < 7) || (talking && hour > 20))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
     }
 }

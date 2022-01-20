@@ -10,9 +10,17 @@
          MonkeyTrouble(false, false) → true
          MonkeyTrouble(true, false) → false
          */
-        public bool MonkeyTrouble(bool aSmile, bool bSmile)
+        public bool MonkeyTrouble(bool aSmile, bool bSmile) 
         {
-            return false;
+            if ((aSmile && bSmile) || (!aSmile && !bSmile))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+           
         }
     }
 }
