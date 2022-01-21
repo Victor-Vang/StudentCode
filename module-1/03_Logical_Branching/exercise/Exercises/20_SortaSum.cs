@@ -12,7 +12,15 @@
          */
         public int SortaSum(int a, int b)
         {
-            return 0;
+            if (((a + b) > 9) && ((a + b) < 20))
+            {
+                return 20;
+            }
+            else
+            {
+                return (a + b);
+            }
+
         }
     }
 }

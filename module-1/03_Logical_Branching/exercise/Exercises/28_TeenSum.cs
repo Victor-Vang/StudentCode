@@ -11,7 +11,18 @@
          */
         public int TeenSum(int a, int b)
         {
-            return 0;
+            if (((a < 13) || (a > 19)) && ((b < 13) || (b > 19)))
+            {
+                return (a + b);
+            }
+           else if (((a > 12) || (a < 20)) || ((b > 12) || (b < 20)))
+            {
+                return 19;
+            }
+            else
+            {
+                return (a + b);
+            }
         }
     }
 }

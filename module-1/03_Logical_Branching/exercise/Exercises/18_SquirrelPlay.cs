@@ -12,7 +12,19 @@
          */
         public bool SquirrelPlay(int temp, bool isSummer)
         {
-            return false;
+            if ((temp > 59) && (temp < 91))
+            {
+                return true;
+            }
+            else if ((isSummer) && ((temp > 59) && (temp < 101)))
+                    {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
     }
 }

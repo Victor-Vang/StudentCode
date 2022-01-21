@@ -13,7 +13,18 @@
          */
         public int TeaParty(int tea, int candy)
         {
-            return 0;
+            if ((tea < 5) || (candy < 5))
+            {
+                return 0;
+            }
+            else if ((tea >= (2 * candy)) || (candy >= (tea * 2)))
+            {
+                return 2;
+            }
+            else
+            {
+                return 1;
+            }
         }
     }
 }

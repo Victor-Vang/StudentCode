@@ -10,7 +10,14 @@
          */
         public bool TwoAsOne(int a, int b, int c)
         {
-            return false;
+            if (((c == a + b) || (a == b + c)) || (b == a + c))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

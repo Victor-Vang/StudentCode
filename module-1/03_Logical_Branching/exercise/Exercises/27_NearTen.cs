@@ -11,7 +11,14 @@
          */
         public bool NearTen(int num)
         {
-            return false;
+            if ((num % 10 <= 2) || (num % 10 >= 8))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

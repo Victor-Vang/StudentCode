@@ -14,7 +14,27 @@
          */
         public int LuckySum(int a, int b, int c)
         {
-            return 0;
+            if ((a == 13) && ((c != 13) && (b != 13)))
+            {
+                return c;
+            }
+            else if ((b == 13) && (a != 13))
+            {
+                return a;
+            }
+            else if ((c == 13) && ((a != 13) && (b !=13)))
+                    {
+                return a + b;
+            }
+            else if ((a != 13) && ((b != 13) && (c != 13)))
+            {
+                return (a + b + c);
+            }
+            else
+            {
+                return 0;
+            }
+      
         }
     }
 }
