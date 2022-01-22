@@ -11,7 +11,16 @@
          */
         public int CountEvens(int[] nums)
         {
-            return 0;
+            int numberEven = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] % 2 == 0 )
+                {
+                    numberEven++;
+          
+                }
+            }
+            return numberEven;
         }
     }
 }

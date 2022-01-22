@@ -8,7 +8,12 @@
          */
         public int[] MakePi()
         {
-            return new int[] { };
+            int[] makePi = new int[3];
+            makePi[0] = 3;
+            makePi[1] = 1;
+            makePi[2] = 4;
+
+            return makePi;
         }
     }
 }

@@ -11,16 +11,13 @@
          */
         public bool FirstLast6(int[] nums)
         {
-            for (int i = 0; i < nums.Length; i++)
+            if ((nums.Length >=1) && ((nums[0] == 6) || (nums[nums.Length - 1] == 6)))
             {
-                if ((nums[0] == 6) || (nums[(nums.Length - 1)] == 6))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
