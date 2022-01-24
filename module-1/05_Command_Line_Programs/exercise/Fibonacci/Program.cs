@@ -10,30 +10,60 @@ namespace Fibonacci
             string userInput = Console.ReadLine();
             int fibNumber = int.Parse(userInput);
 
+            //0, 1, 1, 2
+
             int backOne = 1;
             int backTwo = 0;
+            int current = 0;
 
-            // string fibStarter = "0, 1";
+            //int placeholder = 0;
 
-            int[] fibonacci = new int []
+            string fibStarter = "0, 1";
 
-            for (int i = 0; i < fibNumber; i++)
+            //int[] fibonacciArray = new int[fibNumber];
+
+            Console.Write(fibStarter);
+
+            while (current <= fibNumber)
             {
-                int current = (backOne + backTwo);
-                backOne = current;
+                current = backOne + backTwo;
+
+
+                //placeholder = backOne;
+
                 backTwo = backOne;
-                
-                if (current >= fibNumber)
+
+                backOne = current;
+
+                if (current <= fibNumber)
                 {
-                    
+
+                Console.Write(", " + current);
+
                 }
+
             }
 
+            
 
-            if (fibNumber <= 0)
-            {
-                Console.WriteLine(fibStarter);
-            }
+
+            //for (int i = 0; i < fibNumber; i++)
+            //{
+            //    int current = (backOne + backTwo);
+            //    backOne = current;
+            //    backTwo = backOne;
+                
+            //    if (current >= fibNumber)
+            //    {
+                    
+            //    }
+            //}
+
+
+            //if (fibNumber <= 0)
+            //{
+            //    // Console.WriteLine(fibStarter);
+            //}
             
         }
     }

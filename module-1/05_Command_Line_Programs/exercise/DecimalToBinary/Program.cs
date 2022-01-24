@@ -6,7 +6,7 @@ namespace DecimalToBinary
     {
         static void Main(string[] args)
         {
-            Console.Write("Please enter in a series of decimal values (separated by space): ");
+            Console.Write("Please enter in a series of decimal values (separated by spaces): ");
 
             string userInput = Console.ReadLine();
             string[] numbersAsStrings = userInput.Split(" ");
@@ -18,8 +18,8 @@ namespace DecimalToBinary
                 int numbersParsed = int.Parse(numbersAsStrings[i]);
                 convertedNumbers[i] = numbersParsed;
                 
-            Console.WriteLine(convertedNumbers[i] + " in binary is " + Convert.ToString(convertedNumbers[i], 2));        
             Console.WriteLine();        
+            Console.WriteLine(convertedNumbers[i] + " in binary is " + Convert.ToString(convertedNumbers[i], 2));        
             }
         }
     }
