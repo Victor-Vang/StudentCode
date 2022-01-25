@@ -11,7 +11,16 @@
         */
         public string StringYak(string str)
         {
-            return null;
+            bool isYakThere = str.Contains("yak");
+            if (isYakThere)
+            {
+                string replacementString = str.Replace("yak", "");
+                return replacementString;
+            }
+            else
+            {
+                return str;
+            }
         }
     }
 }
