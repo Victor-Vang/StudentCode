@@ -10,7 +10,12 @@
         */
         public string StringTimes(string str, int n)
         {
-            return new 
+            string largerStr = "";
+            for (int i = 0; i < n; i++)
+            {
+                largerStr = largerStr + str;
+            }
+            return largerStr;
         }
     }
 }

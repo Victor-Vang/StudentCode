@@ -10,7 +10,26 @@
         */
         public string AltPairs(string str)
         {
-            return null;
+            string finalResult = "";
+            string everyOtherTwo = "";
+            if (str.Length <= 2)
+            {
+                return str;
+            }
+            for (int i = 0; i < str.Length; i += 4)
+            {
+                if (i < str.Length - 1)
+                {
+                    everyOtherTwo = "" + str[i] + str[i + 1];
+                    finalResult = finalResult + everyOtherTwo;
+                }
+                else
+                {
+                    everyOtherTwo = "" + str[i];
+                    finalResult = finalResult + everyOtherTwo;
+                }
+            }
+            return finalResult; //come back and check out to simplify
         }
     }
 }

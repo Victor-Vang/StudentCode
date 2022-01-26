@@ -11,7 +11,24 @@
         */
         public string FrontTimes(string str, int n)
         {
-            return null;
+            string copy = "";
+
+            if (str.Length > 3)
+            {
+                string front = str.Substring(0, 3);
+                for (int i = 0; i < n; i++)
+                {
+                    copy = copy + front;
+                }
+            }
+            else if (str.Length <= 3)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    copy = copy + str;
+                }
+            }
+            return copy;
         }
 
     }

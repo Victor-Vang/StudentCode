@@ -10,7 +10,25 @@
         */
         public bool DoubleX(string str)
         {
-            return false;
+            bool isThereX = str.Contains("x");
+            int firstX = str.IndexOf("x");
+
+            if (str == "")
+            {
+                return false;
+            }
+            else if ((str[str.Length - 1] == 'x') && (firstX == str.Length - 1))
+            {
+                return false;
+            }
+            else if ((isThereX) && (str[firstX + 1] == 'x')) //&& (firstX != str[str.Length - 1]))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

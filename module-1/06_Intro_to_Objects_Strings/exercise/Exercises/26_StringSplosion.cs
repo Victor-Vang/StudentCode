@@ -10,7 +10,14 @@
         */
         public string StringSplosion(string str)
         {
-            return null;
+            string stringSplosion = "";
+            string recurring = "";
+            for (int i = 0; i < str.Length; i++)
+            {
+                stringSplosion = stringSplosion + str[i];
+                recurring = recurring + stringSplosion;
+            }
+            return recurring;
         }
     }
 }

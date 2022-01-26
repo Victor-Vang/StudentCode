@@ -11,7 +11,22 @@
         */
         public int Last2(string str)
         {
-            return 0;
+            int lengthTwoCounter = 0;
+            if (str.Length > 2)
+            {
+                string lastTwo = str.Substring(str.Length - 2);
+
+                for (int i = 0; i < str.Length - 2; i++)
+                {
+                    string testString = str.Substring(i, 2);
+                    // int index = str[i];
+                    if (testString == lastTwo)
+                    {
+                        lengthTwoCounter++;
+                    }
+                }
+            }
+            return lengthTwoCounter;
         }
     }
 }
