@@ -18,7 +18,35 @@ namespace Exercises
          */
         public Dictionary<string, int> WordCount(string[] words)
         {
-            return null;
+            Dictionary<string, int> result = new Dictionary<string, int>();
+
+            foreach (string item in words)
+                if (result.ContainsKey(item))
+                {
+                    result[item] += 1;
+                }
+                else
+                {
+                    result[item] = 1;
+                }
+
+            //for (int i = 0; i < words.Length; i++)
+            //{
+            //    int repeatcounter = 0; // going to be value in dictionary
+            //    string placeholder = words[i]; // variable to compare against
+
+            //    foreach (string item in words)
+            //    {
+            //        if (placeholder == item)
+            //        {
+            //            repeatcounter++;
+            //        }
+            //    }
+
+            //    result[placeholder] = repeatcounter;
+            //}
+
+            return result;
         }
     }
 }
