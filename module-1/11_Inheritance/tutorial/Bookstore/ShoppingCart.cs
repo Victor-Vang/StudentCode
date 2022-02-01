@@ -6,32 +6,32 @@ namespace TechElevator.Bookstore
 {
     public class ShoppingCart
     {
-        private List<Book> booksToBuy = new List<Book>();
+        private List<MediaItem> itemsToBuy = new List<MediaItem>();
 
         public decimal TotalPrice
         {
             get
             {
                 decimal total = 0.0M;
-                foreach (Book book in this.booksToBuy)
+                foreach (MediaItem item in this.itemsToBuy)
                 {
-                    total += book.Price;
+                    total += item.Price;
                 }
                 return total;
             }
         }
 
-        public void Add(Book bookToAdd)
+        public void Add(MediaItem itemToAdd)
         {
-            booksToBuy.Add(bookToAdd);
+            itemsToBuy.Add(itemToAdd);
         }
 
         public string GetReceipt()
         {
             string receipt = "Receipt\n";
-            foreach (Book book in this.booksToBuy)
+            foreach (MediaItem item in this.itemsToBuy)
             {
-                receipt += book.GetBookInfo();
+                receipt += item.ToString();
                 receipt += "\n";
             }
             receipt += "\nTotal: $" + this.TotalPrice;

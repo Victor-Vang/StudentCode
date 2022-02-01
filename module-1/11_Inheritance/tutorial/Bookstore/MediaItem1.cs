@@ -4,27 +4,24 @@ using System.Text;
 
 namespace TechElevator.Bookstore
 {
-    public class Book
+    public class MediaItem : MediaItem
     {
         // Constructors for the Book class
-        public Book()
+        public MediaItem()
         {
         }
 
-        public Book(string title, string author, decimal price)
+        public MediaItem(string title, string author, decimal price)
         {
             this.Title = title;
             this.Author = author;
             this.Price = price;
         }
 
-        // Add the properties
-        public string Title { get; set; }
         public string Author { get; set; }
-        public decimal Price { get; set; }
 
         // Return a string representation of this book
-        public string GetBookInfo()
+        public override string ToString()
         {
             return $"Title: {this.Title}, Author: {this.Author}, Price: ${this.Price}";
         }

@@ -7,6 +7,10 @@ namespace Lecture.Farming
         public Chicken() : base("Chicken", "cluck")
         {
         }
+        //public Chicken(string name, string sound) : base(name, sound)
+        //{
+
+        //}
 
         public void LayEgg()
         {

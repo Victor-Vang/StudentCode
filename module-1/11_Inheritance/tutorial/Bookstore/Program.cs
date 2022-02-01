@@ -10,14 +10,14 @@ namespace TechElevator.Bookstore
             Console.WriteLine();
 
             // Step Three: Test the getters and setters
-            Book twoCities = new Book();
+            MediaItem twoCities = new MediaItem();
             twoCities.Title = "A Tale of Two Cities";
             twoCities.Author = "Charles Dickens";
             twoCities.Price = 14.99M;
 
             // Step Five: Test the Book constructor
-            Book threeMusketeers = new Book("The Three Musketeers", "Alexandre Dumas", 12.95M);
-            Book childhoodEnd = new Book("Childhood's End", "Arthur C. Clark", 5.99M);
+            MediaItem threeMusketeers = new MediaItem("The Three Musketeers", "Alexandre Dumas", 12.95M);
+            MediaItem childhoodEnd = new MediaItem("Childhood's End", "Arthur C. Clark", 5.99M);
 
             // Step Nine: Test the ShoppingCart class
             ShoppingCart shoppingCart = new ShoppingCart();
