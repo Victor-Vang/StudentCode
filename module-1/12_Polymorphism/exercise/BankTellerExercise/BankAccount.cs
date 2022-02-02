@@ -4,7 +4,7 @@
     {
         public string AccountHolderName { get; private set; }
         public string AccountNumber { get; }
-        public decimal Balance { get; set; }
+        public decimal Balance { get; private set; }
 
         public BankAccount(string accountHolder, string accountNumber)
         {
