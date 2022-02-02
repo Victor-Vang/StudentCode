@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Lecture.Farming
+namespace TechElevator.Bookstore
 {
-    public interface ISellable
+    public interface IPurchasable
     {
 
-        string Name { get; }
         decimal Price { get; }
 
     }

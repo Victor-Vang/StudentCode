@@ -4,11 +4,12 @@ using System.Text;
 
 namespace Lecture.Farming
 {
-    public class Tractor : ISingable
+    public class Tractor : ISingable, ISellable
     {
 
         public string Name { get; } = "Tractor";
         public string Sound { get; } = "vroom";
+        public decimal Price { get; } = 1500.00M;
 
     }
 }

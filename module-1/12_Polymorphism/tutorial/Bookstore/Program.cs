@@ -34,6 +34,13 @@ namespace TechElevator.Bookstore
             Movie airplane = new Movie("Airplane!", "PG", 88, 14.99M);
             shoppingCart.Add(airplane);
 
+            Coffee myCoffee = new Coffee("Extra-large", "Dark Roast", new string[] { "Creme" }, (decimal)3.99);
+            Coffee myFriendsCoffee = new Coffee("Medium", "House Blend", new string[] { "Soy milk", "Sugar" }, (decimal)2.79);
+            shoppingCart.Add(myCoffee);
+            shoppingCart.Add(myFriendsCoffee);
+
+            
+
             Console.WriteLine(shoppingCart.GetReceipt());
         }
     }

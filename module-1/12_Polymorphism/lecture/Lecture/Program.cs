@@ -1,5 +1,6 @@
 ﻿using Lecture.Farming;
 using System;
+using System.Collections.Generic;
 
 namespace Lecture
 {
@@ -23,6 +24,16 @@ namespace Lecture
             }
 
                 Console.WriteLine("Old MacDonald had a farm, ee ay ee ay oh!");
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            List<ISellable> forSale = new List<ISellable>() { new Cow(), new Chicken(), new Pig(), new Tractor() };
+
+            foreach(ISellable item in forSale)
+            {
+                Console.WriteLine($"Item : {item.Name} = {item.Price.ToString("C")}");
+            }
 
         }
     }

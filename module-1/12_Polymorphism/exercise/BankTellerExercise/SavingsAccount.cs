@@ -26,5 +26,19 @@ namespace BankTellerExercise
             }
             return Balance;
         }
+
+        public override decimal TransferTo(BankAccount destinationAccount, decimal transferAmount)
+        {
+            if (Balance - transferAmount < 150)
+            {
+                base.Withdraw(transferAmount + 2.00M);
+                destinationAccount.Balance += transferAmount;
+            }
+
+            return Balance;
+            //Balance -= transferAmount;
+            //destinationAccount.Balance += transferAmount;
+            //return this.Balance;
+        }
     }
 }
