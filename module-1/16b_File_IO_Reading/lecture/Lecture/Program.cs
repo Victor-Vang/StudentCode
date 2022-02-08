@@ -6,11 +6,11 @@ namespace Lecture
     {
         static void Main(string[] args)
         {
-            FileAndDirectories.UsingTheDirectoryClass();
+            //FileAndDirectories.UsingTheDirectoryClass();
             //FileAndDirectories.UsingTheFileClass();
             //FilePaths.UsingPathToCombineTwoFilePaths();
             //FilePaths.UsingPathForTemporaryFolders();
-            //ReadingInFiles.ReadACharacterFile();
+            ReadingInFiles.ReadACharacterFile();
             //ReadingCSVFiles.ReadFile();
             //SummingUpNumbers.ReadFile();
             //Memory_StreamSample.ReadStream();
