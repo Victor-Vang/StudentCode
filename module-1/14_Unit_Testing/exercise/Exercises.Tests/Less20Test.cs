@@ -20,7 +20,7 @@ namespace Exercises.Tests
             bool result = testObject.IsLessThanMultipleOf20(18);
 
             // Assert
-            Assert.IsTrue(true);
+            Assert.IsTrue(result);
 
 
         }

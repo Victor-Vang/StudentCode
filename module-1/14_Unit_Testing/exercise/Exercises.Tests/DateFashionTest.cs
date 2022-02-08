@@ -15,7 +15,7 @@ namespace Exercises.Tests
             int result = testObject.GetATable(0, 10);
 
             // Assert
-            Assert.AreEqual(0, 0);
+            Assert.AreEqual(0, result);
         }
     }
 }
