@@ -1,3 +1,4 @@
+using Assessment.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Assessment.Tests
@@ -6,11 +7,23 @@ namespace Assessment.Tests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ActualCostWithRushAndIce()
         {
-            // There should be a test class to test the new class.
-            // the UnitTest1 class can server as a template for what's inside of
-            // the test class
+            WorkOrder testObject = new WorkOrder("Victor", 15, 15);
+
+            decimal result = testObject.ActualTotal(true, true);
+
+            Assert.AreEqual(69.94M, result);
+        }
+        
+        [TestMethod]
+        public void ToStringTest()
+        {
+            WorkOrder testObject = new WorkOrder("Victor", 15, 15);
+
+            string result = testObject.ToString();
+
+            Assert.AreEqual("WORK ORDER - Victor - 11.23", result);
         }
     }
 }
