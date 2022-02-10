@@ -87,13 +87,13 @@ namespace PetInfo
             {
                 result = petWorks.AddPet(id, name, type, breed);
             }
-            catch(IOException ex)
+            catch (IOException ex)
             {
                 Console.WriteLine("Error adding pet: " + ex.Message);
                 return;
             }
 
-            if(result)
+            if (result)
             {
                 Console.WriteLine("Pet added.");
             }
@@ -106,8 +106,16 @@ namespace PetInfo
 
         private void ListPets()
         {
-            Pet[] result = petWorks.GetPets();
+            Pet[] result = null;
 
+            try
+            {
+                result = petWorks.GetPets();
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine("Exception reading the pet info file: " + ex.Message);
+            }
             foreach (Pet pet in result)
             {
                 Console.WriteLine(pet.ToString());
@@ -120,7 +128,7 @@ namespace PetInfo
             int id = int.Parse(Console.ReadLine());
 
             bool result = false;
-                
+
             try
             {
                 result = petWorks.DeletePet(id);
