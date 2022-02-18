@@ -40,7 +40,7 @@ BEGIN TRY
 
 	SET IDENTITY_INSERT  Pet ON
 	INSERT INTO Pet (Id, Name, Type, Breed, Owner) VALUES (1, 'Bella', 'dog', 'GSD', 1000);
-	INSERT INTO Pet (Id, Name, Type, Breed, Owner) VALUES (1, 'Primrose', 'cat', 'DSH', 1001);
+	INSERT INTO Pet (Id, Name, Type, Breed, Owner) VALUES (2, 'Primrose', 'cat', 'DSH', 1001);
 	INSERT INTO Pet (Id, Name, Type, Breed, Owner) VALUES (3, 'Gabriel', 'cat', 'DSH', 1001);
 	INSERT INTO Pet (Id, Name, Type, Breed, Owner) VALUES (4, 'Penny', 'cat', 'DSH', 1001);
 	INSERT INTO Pet (Id, Name, Type, Breed, Owner) VALUES (5, 'Fish01', 'fish', 'Goldfish', 1000);
@@ -71,3 +71,4 @@ END TRY
 BEGIN CATCH
 	ROLLBACK TRANSACTION
 END CATCH
+
