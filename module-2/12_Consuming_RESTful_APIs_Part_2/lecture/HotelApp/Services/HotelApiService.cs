@@ -58,17 +58,33 @@ namespace HotelReservationsClient.Services
 
         public Reservation AddReservation(Reservation newReservation)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest("reservations");
+            request.AddJsonBody(newReservation);
+            IRestResponse<Reservation> response = client.Post<Reservation>(request);
+
+            CheckForError(response);
+
+            return response.Data;
         }
 
         public Reservation UpdateReservation(Reservation reservationToUpdate)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest($"reservations/{reservationToUpdate.Id}");
+            request.AddJsonBody(reservationToUpdate);
+            IRestResponse<Reservation> response = client.Put<Reservation>(request);
+
+            CheckForError(response);
+
+            return response.Data;
         }
 
         public bool DeleteReservation(int reservationId)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest($"reservations/{reservationId}");
+            IRestResponse response = client.Delete(request);
+
+            return true;
+            //return response.Status == ResponseStatus.completed && response.IsSuccessful;
         }
 
         /// <summary>
@@ -77,13 +93,17 @@ namespace HotelReservationsClient.Services
         /// </summary>
         /// <param name="response">Response returned from a RestSharp method call.</param>
         /// <param name="action">Description of the action the application was taking. Written to the log file for context.</param>
-        private void CheckForError(IRestResponse response, string action)
+        private void CheckForError(IRestResponse response, string action = "")
         {
-            if (!response.IsSuccessful)
+            if (response.ResponseStatus != ResponseStatus.Completed)
             {
                 // TODO: Write a log message for future reference
 
-                throw new HttpRequestException($"There was an error in the call to the server");
+                throw new HttpRequestException($"There was an error communicating with the server.{action}");
+            }
+            else if (!response.IsSuccessful)
+            {
+                throw new HttpRequestException($"An error was encountered. Status: {(int)response.StatusCode}");
             }
 
         }
