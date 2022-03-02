@@ -34,7 +34,7 @@ namespace PetInfoTest
             Pet pet = new Pet("Xyzzy", "dog", "Afghan");
             petDAO.AddPet(pet);
 
-            using (SqlConnection conn = new SqlConnection())
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
@@ -42,7 +42,7 @@ namespace PetInfoTest
 
                 cmd.Parameters.AddWithValue("@name", "Xyzzy");
 
-                int id = Convert.ToInt32(cmd.ExecuteScalar());
+                petId = Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
 
@@ -93,7 +93,7 @@ namespace PetInfoTest
         //}
 
         //[TestMethod]
-        //public void PetDAOGetPetTest()
+        //public void PetDAODeletePetTest()
         //{
 
         //}
