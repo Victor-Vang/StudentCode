@@ -63,7 +63,7 @@ namespace AuctionApp.Controllers
             }
             else
             {
-                return NotFound();
+                return NoContent();
             }
         }
 

@@ -7,14 +7,19 @@ namespace HotelReservations.Models
     {
         public int Id { get; set; }
 
+        [Required]
         public int HotelId { get; set; }
 
+        [Required]
         public string FullName { get; set; }
 
+        [Required]
         public DateTime CheckinDate { get; set; }
 
+        [Range (1, 99)]
         public int Nights { get; set; }
 
+        [Range (1, 20)]
         public int Guests { get; set; }
 
         public Reservation()
