@@ -6,17 +6,17 @@ using System.Collections.Generic;
 
 namespace PetInfoClient.APIServices
 {
-    public class CustomerAPIService 
+    public class OwnerAPIService 
     {
-        private readonly string API_URL = "https://localhost:44349/customer/";
+        private readonly string API_URL = "https://localhost:44349/owner/";
         RestClient client = new RestClient();
 
-        public List<Customer> GetCustomers()
+        public List<Owner> GetOwners()
         {
-            List<Customer> cities = new List<Customer>();
+            List<Owner> owners = new List<Owner>();
 
             RestRequest request = new RestRequest(API_URL);
-            IRestResponse<List<Customer>> response = client.Get<List<Customer>>(request);
+            IRestResponse<List<Owner>> response = client.Get<List<Owner>>(request);
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
                 throw new Exception("Error occurred - unable to reach server.");

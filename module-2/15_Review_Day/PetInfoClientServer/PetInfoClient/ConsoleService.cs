@@ -10,7 +10,7 @@ namespace WorldClient
     {
 
         private readonly PetAPIService petAPIService = new PetAPIService();
-        private readonly CustomerAPIService customerAPIService = new CustomerAPIService();
+        private readonly OwnerAPIService customerAPIService = new OwnerAPIService();
 
         public void Run()
         {
@@ -37,6 +37,9 @@ namespace WorldClient
                         break;
                     case "4":
                         ListPets();
+                        break;
+                    case "5":
+                        ListOwners();
                         break;
                     case "q":
                     case "Q":
@@ -75,6 +78,7 @@ namespace WorldClient
             Console.WriteLine("2 - Delete a pet");
             Console.WriteLine("3 - Update a pet");
             Console.WriteLine("4 - List pets");
+            Console.WriteLine("5 - List owners");
             Console.WriteLine("Q - Quit the program");
         }
 
@@ -157,15 +161,26 @@ namespace WorldClient
 
         private void ListOwners()
         {
-            List<Customer> customers = customerAPIService.GetCustomers();
+            List<Owner> owners = null;
+
+            try
+            {
+                owners = customerAPIService.GetOwners();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Unable to list owners: " + ex.Message);
+                return;
+            }
 
             Console.WriteLine();
             Console.WriteLine();
 
             Console.WriteLine("The owners are:");
-            foreach (Customer customer in customers)
+            foreach (Owner owner in owners)
             {
-                Console.WriteLine(customer);
+                Console.WriteLine(owner);
             }
             Console.WriteLine();
         }

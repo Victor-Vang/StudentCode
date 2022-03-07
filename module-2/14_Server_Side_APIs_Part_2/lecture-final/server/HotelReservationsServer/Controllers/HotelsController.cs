@@ -38,7 +38,7 @@ namespace HotelReservations.Controllers
         }
 
         [HttpGet("filter")]
-        public List<Hotel> FilterByStateOrCity(string state, string city)
+        public List<Hotel> FilterByStateOrCity(string state = "", string city = "")
         {
             List<Hotel> filteredHotels = new List<Hotel>();
 

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PetInfoClient.Models
 {
-    public class Customer
+    public class Owner
     {
         public int Id { get; set; }
         public string Name { get; set; }
