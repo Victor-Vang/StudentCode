@@ -1,5 +1,6 @@
 ﻿using LocationClient.Models;
 using RestSharp;
+using RestSharp.Authenticators;
 using System.Collections.Generic;
 
 namespace LocationClient.Services
