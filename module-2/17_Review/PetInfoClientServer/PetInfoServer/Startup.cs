@@ -33,9 +33,11 @@ namespace PetInfoServer
 
             services.AddSingleton<ITokenGenerator>(tk => new JwtGenerator(Configuration["JwtSecret"]));
             services.AddSingleton<IPasswordHasher>(ph => new PasswordHasher());
+
             services.AddTransient<IPetDAO>(m => new PetDAO(connectionString));
             services.AddTransient<IUserDAO>(m => new UserDAO(connectionString));
             services.AddTransient<IOwnerDAO>(m => new OwnerDAO(connectionString));
+            services.AddTransient<IActivityDAO>(m => new ActivityDAO(connectionString));
 
             //end of addition
 

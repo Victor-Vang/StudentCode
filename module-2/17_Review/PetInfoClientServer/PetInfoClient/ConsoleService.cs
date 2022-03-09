@@ -12,6 +12,7 @@ namespace WorldClient
         private PetAPIService petAPIService = new PetAPIService();
         private OwnerAPIService ownerAPIService = new OwnerAPIService();
         private LoginAPIService loginAPIService = new LoginAPIService();
+        private ActivityAPIService activityAPIService = new ActivityAPIService();
 
         public void Run()
         {
@@ -43,6 +44,10 @@ namespace WorldClient
 
                     case "5":
                         ListOwners();
+                        break;
+                    
+                    case "6":
+                        ListActivities();
                         break;
 
                     case "8":
@@ -94,6 +99,8 @@ namespace WorldClient
             Console.WriteLine(" 3 - Update a pet");
             Console.WriteLine(" 4 - List pets");
             Console.WriteLine(" 5 - List owners");
+            Console.WriteLine(" 6 - List activities");
+            Console.WriteLine(" 7 - List owners");
             Console.WriteLine(" 8 - Register");
             Console.WriteLine(" 9 - " + logInOut);
             Console.WriteLine(" Q - Quit");
@@ -147,6 +154,30 @@ namespace WorldClient
 
                 Console.WriteLine();
                 Console.WriteLine("Unable to list pets: " + ex.Message);
+            }
+        }
+
+        private void ListActivities()
+        {
+            try
+            {
+                List<Activity> activities = activityAPIService.GetActivities();
+
+                Console.WriteLine();
+                Console.WriteLine();
+
+                Console.WriteLine("The activities are:");
+                foreach (Activity activity in activities)
+                {
+                    Console.WriteLine(activity);
+                }
+                Console.WriteLine();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine();
+                Console.WriteLine("Unable to list activities: " + ex.Message);
             }
         }
 
