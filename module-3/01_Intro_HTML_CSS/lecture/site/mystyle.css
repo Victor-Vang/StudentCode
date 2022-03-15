@@ -1,0 +1,17 @@
+body {
+    background-color:red;
+}
+
+h1 {
+    color:azure;
+}
+
+.special {
+    color:whitesmoke
+}
+
+#lastParagraph {
+    text-decoration:line-through;
+    color:turquoise
+}
+
