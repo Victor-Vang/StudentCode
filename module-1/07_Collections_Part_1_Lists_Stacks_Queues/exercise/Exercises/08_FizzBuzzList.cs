@@ -22,27 +22,24 @@ namespace Exercises
 
             foreach (int item in integerArray)
             {
+                string temp = item.ToString();
                 if (item % 15 == 0)
                 {
-                    string temp = item.ToString();
                     temp = "FizzBuzz";
                     result.Add(temp);
                 }
                 else if (item % 3 == 0)
                 {
-                    string temp = item.ToString();
                     temp = "Fizz";
                     result.Add(temp);
                 }
                 else if (item % 5 == 0)
                 {
-                    string temp = item.ToString();
                     temp = "Buzz";
                     result.Add(temp);
                 }
-                else 
+                else
                 {
-                    string temp = item.ToString();
                     result.Add(temp);
                 }
             }

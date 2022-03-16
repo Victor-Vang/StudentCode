@@ -15,3 +15,83 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+aside {
+  position: fixed;
+  border-style: solid;
+  border-width: 1px;
+  border-color:rgba(0, 173, 238, 0.4);
+  width: 200px;
+  height: 100%; 
+  margin-right: 20px;
+}
+
+aside > img {
+  height: 120px;
+  margin-left: 39px;
+}
+
+main {
+  margin-left: 220px;
+  margin-right: 20px;
+}
+
+li {
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 173, 238, 0.4);
+  width: 75%;
+  margin-left: 23px;
+  list-style: none;
+  margin-top: 13px;
+  margin-bottom: 23px;
+  line-height: 150%;
+}
+
+ul > li > a {
+  font-weight: bold;
+  color: #00ADEE;
+  text-decoration: none;
+}
+
+li:first-child {
+  text-decoration: underline;
+}
+
+header > img {
+  height: 100px;
+  margin-bottom: 50px;
+}
+
+main > img {
+  height: 100%;
+  width: 100%;
+}
+
+div {
+  width: 33%;
+  float: left;
+}
+
+div > h2 {
+  color: #8CC36F;
+}
+
+h2 > i {
+  margin-right: 10px;
+}
+
+#what-we-do {
+  border-right: 1px solid rgba(170, 239, 135, 0.8);
+  padding-right: 10px
+}
+
+#our-work {
+  border-right: 1px solid rgba(170, 239, 135, 0.8);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#contact-us {
+  padding-left: 10px;
+}

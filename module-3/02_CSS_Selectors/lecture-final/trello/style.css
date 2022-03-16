@@ -1,4 +1,4 @@
-/* Apply this style to the HTML tag */
+Apply this style to the HTML tag
 html {
     height: 100%;
     font-size: 16px;
@@ -159,7 +159,7 @@ div.trello-list a:hover {
 
 
 
-/* Scrollbar */
+Scrollbar
 body::-webkit-scrollbar {
     width: 10px;
 }

@@ -16,7 +16,10 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;  
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 01d49ded8da75c6cba06e3a772be5b0bd5735f6a
 /* Style for the header */
 header {
     position: fixed;
@@ -28,11 +31,18 @@ header > h1, header > p {
     display: inline-block;    
     padding-right: 20px;
     vertical-align: middle;
+<<<<<<< HEAD
     color: rgba(255, 255, 255, .8);
     border-right: 1px solid rgba(255, 255, 255, 0.5); 
     height: 20px;   
 }
 
+=======
+    color: rgba(255, 255, 255, 0.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.5); 
+    height: 20px;   
+}
+>>>>>>> 01d49ded8da75c6cba06e3a772be5b0bd5735f6a
 header > h1 {
     text-transform: uppercase;
     font-size: 1.1rem;
@@ -46,7 +56,10 @@ header > p {
 main {
     margin-top: 50px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 01d49ded8da75c6cba06e3a772be5b0bd5735f6a
 /* Style for each trello-list */
 /* All divs that have a class "trello-list" */
 div.trello-list {
@@ -71,7 +84,11 @@ div.trello-list h2 {
     margin: 8px;
 
     /* Font */
+<<<<<<< HEAD
     font-size: 1.0em;
+=======
+    font-size: 1.0rem;
+>>>>>>> 01d49ded8da75c6cba06e3a772be5b0bd5735f6a
     font-weight: bold;
 }
 
@@ -121,9 +138,12 @@ div.trello-list a {
 div.trello-list a:hover {
     background-color: rgba(9, 45, 66, .1);
 }
+<<<<<<< HEAD
 
 
 
 
     
 
+=======
+>>>>>>> 01d49ded8da75c6cba06e3a772be5b0bd5735f6a
