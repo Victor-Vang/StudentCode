@@ -5,6 +5,7 @@ body {
 }
 
 .container {
+  display: flex;
   background-color: #F0F0F0;
 }
 
@@ -19,4 +20,8 @@ body {
 
 .box:nth-child(even) {
   background-color: #005270;
+}
+
+div {
+  flex-grow: 1;
 }
