@@ -8,10 +8,42 @@
  * Functions start with the word function.
  * They don't have a return type and the naming convention is camel-case.
  */
+
+console.log("This is not inside of a function")
+// victorsStuff();
+
+function victorsStuff() {
+
+  console.log("Hello World!")
+  console.log(10 == "0010")
+  const logMe = console.log;
+  logMe("Wow, this is cool.");
+  logMe(typeof {});
+  let x = 7;
+  x = undefined;
+  logMe(typeof x, x);
+  
+  let y;
+  logMe(typeof y);
+  logMe(typeof z);
+  
+  let myArray = [15, "fifteen", true, {name: "Victor", role: "student"}];
+  let myInfo = myArray[3];
+  console.log(myInfo)
+  
+}
+
 function variables() {
   // Declares a variable where the value cannot be changed
+  const x1 = "Hello";
+  // x1 = "New string";
   // Declares a variable those value can be changed
+  let x2 = 6.7;
   // Declares a variable that will always be an array
+  let x3 = [5, 7, 9, 2];
+  console.log (x3);
+  x3.push(5);
+  console.log (x3);
 }
 
 /**
@@ -75,9 +107,16 @@ function objects() {
 
   // Log the object
 
+console.log(person);
+
   // Log the first and last name
 
+console.log(person.firstName, person.lastName);
+
   // Log each employee
+
+console.log(person.employees);
+
 }
 
 /*
@@ -91,10 +130,12 @@ earlier ones are overriden and the most recent one will be used.
 */
 
 function Add(num1, num2) {
+  console.log("This is never executed.")
   return num1 + num2;
 }
 
 function Add(num1, num2, num3) {
+  console.log("This is always executed.")
   return num1 + num2 + num3;
 }
 
@@ -122,7 +163,7 @@ String Methods
 
 The string data type has a lot of properties and methods similar to strings in Java/C#
 */
-
+let name = "Victor"
 function stringFunctions(value) {
   console.log(`.length -  ${value.length}`);
   console.log(`.endsWith('World') - ${value.endsWith("World")}`);

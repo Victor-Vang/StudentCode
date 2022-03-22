@@ -12,6 +12,36 @@
         iqTest("2 2 4 6") → 0 // all numbers are even, therefore there is no position of an odd number
 */
 
+function iqTest(array)
+{
+    let evenNumber = [];
+    let oddNumber = [];
+
+    for (let i = 0; i < array.length; i++)
+    {
+        if ((array[i]) % 2 === 1)
+        {
+            oddNumber.push(array[i])
+        }
+        else if ((array[i]) % 2 === 0)
+        {
+            evenNumber.push(array[i])
+        }
+    }
+    if (evenNumber.length === 1)
+    {
+        return array.indexOf(evenNumber[0]) + 1;
+    }
+    if (oddNumber.length === 1)
+    {
+        return array.indexOf(oddNumber[0]); + 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
 /*
 2. **titleCase** Write a function that will convert a string into title case, given an optional 
     list of exceptions (minor words). The list of minor words will be given as a string with each 
