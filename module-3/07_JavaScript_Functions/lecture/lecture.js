@@ -1,3 +1,88 @@
+
+const names = ["Primrose", "Gabriel", "Penny"]
+console.log(names)
+
+// find
+
+// console.log(names.find((name) => name === "Penny"));
+
+// const result = names.find(name => name.includes("Victor"));
+
+// if (result)
+// {
+//   console.log("Found name!");
+// }
+// else
+// {
+//   console.log ("Did not find name..");
+// }
+//-----------------------------------------------------------
+
+// findIndex
+
+// const searchTerm = "Prim"
+
+// const resultIndex = names.findIndex(name => name.includes(searchTerm))
+// console.log(resultIndex);
+
+//-----------------------------------------------------------
+
+// filter
+
+// const result = names.filter(item => item.includes("P"));
+// console.log(result);
+
+//-----------------------------------------------------------
+
+// map
+
+// const result = names.map(name => name.toUpperCase());
+// console.log(result);
+
+//-----------------------------------------------------------
+
+// reduce
+
+// const nums = [3, 1, 4, 1, 5, 9, 2, 6]
+// const result = nums.reduce((total, num) => total - num, 15)
+// console.log(nums);
+// console.log(result);
+
+// ----------------------------------------------------------
+
+// forEach
+
+// names.forEach(arg1 => test1(arg1)) 
+
+// function test1(name)
+// {
+//   console.log("From test1: " + name);
+// }
+
+// names.forEach(function test2(name) 
+// {
+//   console.log("From test2: " + name);
+// })
+
+// names.forEach(
+//   function (name) {
+//     console.log("From test3: " + name);
+//   }
+// )
+
+// names.forEach(
+//   (name) => {
+//     console.log("From test4: " + name);
+//   }
+// )
+
+// names.forEach(
+//   (name) => console.log("From test5: " + name))
+
+// names.forEach(name => console.log("From test6: " + name))
+
+// ------------------------------------------------------------
+
 /**
  * All named functions will have the function keyword and
  * a name followed by parentheses.
@@ -111,4 +196,7 @@ function sumAllNumbers(numbersToSum) {
  * @returns {number[]} a new array with only those numbers that are
  *   multiples of 3
  */
-function allDivisibleByThree(numbersToFilter) {}
+function allDivisibleByThree(numbersToFilter) {
+  const result = numbersToFilter.filter(num => {return num % 3 === 0})
+return result;
+}
