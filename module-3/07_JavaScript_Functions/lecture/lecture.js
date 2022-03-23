@@ -2,6 +2,8 @@
 const names = ["Primrose", "Gabriel", "Penny"]
 console.log(names)
 
+console.log(names.length)
+
 // find
 
 // console.log(names.find((name) => name === "Penny"));
