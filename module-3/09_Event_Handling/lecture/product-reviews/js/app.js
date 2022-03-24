@@ -7,6 +7,12 @@ let reviews = [
     review:
       "It certainly is a book. I mean, I can see that. Pages kept together with glue (I hope that's glue) and there's writing on it, in some language.",
     rating: 3
+  },
+  {
+    reviewer: "John Fulton",
+    title: "What a great book!",
+    review: "Wow, a book!",
+    rating: 5
   }
 ];
 
@@ -59,12 +65,35 @@ function displayReview(review) {
 
 // LECTURE STARTS HERE ---------------------------------------------------------------
 
-// Set the product reviews page title.
-setPageTitle();
-// Set the product reviews page description.
-setPageDescription();
-// Display all of the product reviews on our page.
-displayReviews();
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Set the product reviews page title.
+  setPageTitle();
+  // Set the product reviews page description.
+  setPageDescription();
+  // Display all of the product reviews on our page.
+  displayReviews();
+
+  const button = document.getElementById("btnToggleForm");
+  // console.log(button);
+  button.addEventListener("click", showHideForm);
+
+  const p = document.querySelector("p.description");
+  p.addEventListener("click", (event) => toggleDescriptionEdit(event.target));
+
+  const input = document.getElementById("inputDesc")
+  input.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") 
+    {
+      exitDescriptionEdit(event.target, true);
+    }
+    else if (event.key === "Escape") 
+    {
+      exitDescriptionEdit(event.target, false);
+    }
+  })
+
+});
 
 /**
  * Hide the description and show the text box.
@@ -130,4 +159,4 @@ function resetFormValues() {
 /**
  * Save the review that was added using the add review form.
  */
-function saveReview() {}
+function saveReview() { }
