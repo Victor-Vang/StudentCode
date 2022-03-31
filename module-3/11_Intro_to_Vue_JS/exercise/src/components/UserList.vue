@@ -32,7 +32,7 @@
         </td>
       </tr>
       <!-- user listing goes here -->
-      <tr class="user" v-for="user in filteredList" v-bind:key="user.firstName">
+      <tr class="user" v-bind:class="{'disabled': user.status === 'Disabled'}" v-for="user in filteredList" v-bind:key="user.firstName">
         <td>
           <h4>{{ user.firstName }}</h4>
         </td>
@@ -55,41 +55,111 @@
 
 <script>
 export default {
-  name: 'user-list',
+  name: "user-list",
   data() {
     return {
       users: [
-        { firstName: 'John', lastName: 'Smith', username: 'jsmith', emailAddress: 'jsmith@gmail.com', status: 'Active' },
-        { firstName: 'Anna', lastName: 'Bell', username: 'abell', emailAddress: 'abell@yahoo.com', status: 'Active' },
-        { firstName: 'George', lastName: 'Best', username: 'gbest', emailAddress: 'gbest@gmail.com', status: 'Disabled' },
-        { firstName: 'Ben', lastName: 'Carter', username: 'bcarter', emailAddress: 'bcarter@gmail.com', status: 'Active' },
-        { firstName: 'Katie', lastName: 'Jackson', username: 'kjackson', emailAddress: 'kjackson@yahoo.com', status: 'Active' },
-        { firstName: 'Mark', lastName: 'Smith', username: 'msmith', emailAddress: 'msmith@foo.com', status: 'Disabled' }
+        {
+          firstName: "John",
+          lastName: "Smith",
+          username: "jsmith",
+          emailAddress: "jsmith@gmail.com",
+          status: "Active",
+        },
+        {
+          firstName: "Anna",
+          lastName: "Bell",
+          username: "abell",
+          emailAddress: "abell@yahoo.com",
+          status: "Active",
+        },
+        {
+          firstName: "George",
+          lastName: "Best",
+          username: "gbest",
+          emailAddress: "gbest@gmail.com",
+          status: "Disabled",
+        },
+        {
+          firstName: "Ben",
+          lastName: "Carter",
+          username: "bcarter",
+          emailAddress: "bcarter@gmail.com",
+          status: "Active",
+        },
+        {
+          firstName: "Katie",
+          lastName: "Jackson",
+          username: "kjackson",
+          emailAddress: "kjackson@yahoo.com",
+          status: "Active",
+        },
+        {
+          firstName: "Mark",
+          lastName: "Smith",
+          username: "msmith",
+          emailAddress: "msmith@foo.com",
+          status: "Disabled",
+        },
       ],
-      filter : {
-        firstName:"",
-        lastName:"",
-        username:"",
-        emailAddress:"",
-        status:""
+      filter: {
+        firstName: "",
+        lastName: "",
+        username: "",
+        emailAddress: "",
+        status: "",
       },
     };
   },
   computed: {
     filteredList() {
-      return this.users.filter((item) => {
-        if (item.firstName.toLowerCase().includes(this.filter.firstName.toLowerCase())) {
-          return item;
-        }
-        // if (item.lastName.toLowerCase().includes(this.filter.lastName.toLowerCase())) {
-        //   return item;
-        // }
-      });
+      let result = this.users;
+            if (this.filter)
+              {
+              result = result.filter( (x) =>
+              x.firstName.toLowerCase().includes(this.filter.firstName.toLowerCase()));
+              result = result.filter( (x) =>
+              x.lastName.toLowerCase().includes(this.filter.lastName.toLowerCase()));
+              result = result.filter( (x) =>
+              x.username.toLowerCase().includes(this.filter.username.toLowerCase()));
+              result = result.filter( (x) =>
+              x.emailAddress.toLowerCase().includes(this.filter.emailAddress.toLowerCase()));
+              result = result.filter( (x) =>
+              x.status.includes(this.filter.status));
+            }
+          return result;
     }
-  }
+    },
+  };
+    // filteredList() {
+    //   let filteredUsers = this.users;
+      // if (this.filter) {
+      //   filteredUsers = filteredUsers.filter((user) => {
+      //     user.firstName
+      //       .toLowerCase()
+      //       .includes(this.filter.firstName.toLowerCase());
+      //   });
+      //   filteredUsers = filteredUsers.filter((user) => {
+      //     user.lastName
+      //       .toLowerCase()
+      //       .includes(this.filter.lastName.toLowerCase());
+      //   });
 
-  
-}
+      //   filteredUsers = filteredUsers.filter((user) => {
+      //     user.username
+      //       .toLowerCase()
+      //       .includes(this.filter.username.toLowerCase());
+      //   });
+      //   filteredUsers = filteredUsers.filter((user) => {
+      //     user.emailAddress
+      //       .toLowerCase()
+      //       .includes(this.filter.emailAddress.toLowerCase());
+      //   });
+      //   filteredUsers = filteredUsers.filter((user) => {
+      //     user.status === this.filter.status;
+      //   });
+      // }
+      // return filteredUsers;
 </script>
 
 <style scoped>

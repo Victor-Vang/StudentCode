@@ -64,24 +64,24 @@
       <button>Delete Users</button>
     </div>
 
-    <button>Add New User</button>
+    <button v-on:click.prevent="showForm = true" v-show="showForm === false">Add New User</button>
 
-    <form id="frmAddNewUser">
+    <form id="frmAddNewUser" v-show="showForm" v-on:submit.prevent="saveUser">
       <div class="field">
         <label for="firstName">First Name:</label>
-        <input type="text" name="firstName" />
+        <input type="text" name="firstName" v-model="newUser.firstName" />
       </div>
       <div class="field">
         <label for="lastName">Last Name:</label>
-        <input type="text" name="lastName" />
+        <input type="text" name="lastName" v-model="newUser.lastName" />
       </div>
       <div class="field">
         <label for="username">Username:</label>
-        <input type="text" name="username" />
+        <input type="text" name="username" v-model="newUser.username" />
       </div>
       <div class="field">
         <label for="emailAddress">Email Address:</label>
-        <input type="text" name="emailAddress" />
+        <input type="text" name="emailAddress" v-model="newUser.emailAddress" />
       </div>
       <button type="submit" class="btn save">Save User</button>
     </form>
@@ -93,6 +93,8 @@ export default {
   name: "user-list",
   data() {
     return {
+      enable: true,
+      showForm: false,
       filter: {
         firstName: "",
         lastName: "",
@@ -160,7 +162,33 @@ export default {
       ]
     };
   },
-  methods: {},
+  methods: {
+    saveUser() {
+      this.users.unshift(this.newUser);
+      this.resetForm();
+    },
+
+    resetForm() {
+      this.newUser = {};
+      this.showForm = false;
+    },
+
+    flipStatus(id) {
+      let toggleUser = this.users.filter((user) => {
+        user.id === id;
+        if (toggleUser.status === "Disabled") {
+          toggleUser.status === "Active";
+        } else if (toggleUser.status === "Active") {
+          toggleUser.status === "Disabled";
+        }
+      })
+    },
+
+    toggleEnableDisable() {
+      
+    }
+
+  },
   computed: {
     filteredList() {
       let filteredUsers = this.users;
