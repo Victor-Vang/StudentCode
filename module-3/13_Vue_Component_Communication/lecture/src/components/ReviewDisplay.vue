@@ -25,7 +25,10 @@
 <script>
 export default {
   name: "review-display",
-  props: ["review"],
+  // props: ["review"],
+  props: {
+    review: Object
+  },
   methods: {
     onFavoritedChange() {
 

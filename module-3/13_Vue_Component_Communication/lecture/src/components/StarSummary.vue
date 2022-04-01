@@ -11,7 +11,7 @@ export default {
   props: ["rating"],
   methods: {
     updateFilter() {
-
+      this.$store.commit("UPDATE_FILTER", this.rating)
     }
   },
   computed: {
