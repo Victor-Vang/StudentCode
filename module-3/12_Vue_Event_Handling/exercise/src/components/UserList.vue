@@ -48,7 +48,7 @@
           v-bind:class="{ disabled: user.status === 'Disabled' }"
         >
           <td>
-            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" v-model="selectUserIDs" v-on:click="updateSelectAll"/>
+            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" v-model="selectUserIDs" v-on:change="updateSelectAll"/>
           </td>
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
@@ -101,6 +101,7 @@ export default {
   name: "user-list",
   data() {
     return {
+      idCounter: 7,
       selectAll: false,
       selectUserIDs: [],
       showForm: false,
@@ -219,12 +220,16 @@ export default {
     },
 
     saveUser() {
+      this.newUser.id = this.idCounter;
       this.users.unshift(this.newUser);
       this.resetForm();
+      this.idCounter++
     },
 
     resetForm() {
-      this.newUser = {};
+      this.newUser = {
+        status: "Active",
+      };
       this.showForm = false;
     },
 
