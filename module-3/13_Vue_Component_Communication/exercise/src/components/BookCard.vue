@@ -1,9 +1,25 @@
 <template>
-  <div class="card" v-bind:class="{read: book.read === true, unread: book.read === false}">
+  <div
+    class="card"
+    v-bind:class="{ read: book.read === true, unread: book.read === false }"
+  >
     <h2 class="book-title">{{ book.title }}</h2>
-    <img v-if="book.isbn" v-bind:src="'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'" />
-    <h3 class="book-author">{{book.author}}</h3>
-    <button v-bind:class="{'mark-read': book.read == true, 'mark-unread': book.read == false}" v-on:click.prevent="onReadChange(book)">{{book.read === true ? "Mark Unread" : "Mark Read"}}</button>
+    <img
+      v-if="book.isbn"
+      v-bind:src="
+        'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'
+      "
+    />
+    <h3 class="book-author">{{ book.author }}</h3>
+    <button
+      v-bind:class="{
+        'mark-read': book.read == true,
+        'mark-unread': book.read == false,
+      }"
+      v-on:click.prevent="onReadChange(book)"
+    >
+      {{ book.read === true ? "Mark Unread" : "Mark Read" }}
+    </button>
   </div>
 </template>
 
@@ -12,11 +28,10 @@ export default {
   name: "book-card",
   props: ["book"],
   methods: {
-      onReadChange(book) {
-          this.$store.commit("FLIP_READ", book);
-          console.log(book)
-      }
-  }
+    onReadChange(book) {
+      this.$store.commit("FLIP_READ", book);
+    },
+  },
 };
 </script>
 
