@@ -12,19 +12,28 @@ namespace Exercises
         */
         public List<double> ArrayInt2ListDouble(int[] intArray)
         {
+            //List<double> result = new List<double>();
+
+            //double[] convertedArray = new double[intArray.Length];
+
+            //for (int i = 0; i < intArray.Length; i++)
+            //{
+            //    double conversion = intArray[i] / 2.0;
+            //    convertedArray[i] = conversion;
+            //}
+
+            //foreach (double item in convertedArray)
+            //{
+            //    result.Add(item);
+            //}
+
+            //return result;
+
             List<double> result = new List<double>();
 
-            double[] convertedArray = new double[intArray.Length];
-
-            for (int i = 0; i < intArray.Length; i++)
+            foreach (int item in intArray)
             {
-                double conversion = intArray[i] / 2.0;
-                convertedArray[i] = conversion;
-            }
-
-            foreach (double item in convertedArray)
-            {
-                result.Add(item);
+                result.Add(item / 2.0);
             }
 
             return result;

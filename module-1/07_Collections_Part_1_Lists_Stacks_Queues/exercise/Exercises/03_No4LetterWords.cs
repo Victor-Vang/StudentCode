@@ -19,7 +19,7 @@ namespace Exercises
             {
                 if (item.Length != 4)
                 {
-                result.Add(item);
+                    result.Add(item);
                 }
             }
             return result;
