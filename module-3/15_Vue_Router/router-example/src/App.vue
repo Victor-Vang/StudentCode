@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link v-bind:to="{name: 'Home'}">Home</router-link> |
+      <router-link to="/about">About .NET</router-link> |
+      <router-link to="/contactus">Contact Us</router-link>
     </div>
-    <router-view/>
+    <router-view/> 
+    <!-- the currently active view will be presented here -->
+    <footer>Copyright me, 2022</footer>
   </div>
 </template>
 
