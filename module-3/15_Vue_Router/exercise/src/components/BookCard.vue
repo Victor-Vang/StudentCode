@@ -1,6 +1,6 @@
 <template>
   <div class="card" v-bind:class="{ read: book.read }">
-    <h2 class="book-title">{{ book.title }}</h2>
+    <router-link class="book-title" v-bind:to="{name: 'DetailsOfBook', params: {isbn: book.isbn}}"><h3>{{ book.title }}</h3></router-link>
     <img v-if="book.isbn" v-bind:src="'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'" />
     <h3 class="book-author">{{ book.author }}</h3>
     <div class="button-container" v-if="! enableAdd">
