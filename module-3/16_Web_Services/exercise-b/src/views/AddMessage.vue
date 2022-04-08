@@ -11,6 +11,9 @@ import CreateMessage from "@/components/CreateMessage";
 export default {
   components: {
     CreateMessage
+  },
+  create() {
+    console.log("in AddMessage.vue", this.$route.params.topicId);
   }
 };
 </script>

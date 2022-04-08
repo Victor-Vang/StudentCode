@@ -11,6 +11,9 @@ export default {
   name: "Messages",
   components: {
     TopicDetails
+  },
+  created() {
+    console.log("in messages.vue", this.$route.params.id)
   }
 };
 </script>

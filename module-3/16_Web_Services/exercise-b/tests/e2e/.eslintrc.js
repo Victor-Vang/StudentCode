@@ -8,6 +8,6 @@ module.exports = {
   },
   rules: {
     strict: 'off',
-    "no-console": 0
+    // "no-console": 0
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <form v-on:submit.prevent>
+  <form v-on:submit.prevent="saveMessage">
     <div class="field">
       <label for="title">Title</label>
       <input type="text" name="title" v-model="message.title" />
@@ -9,7 +9,7 @@
       <input type="text" name="messageText" v-model="message.messageText" />
     </div>
     <div class="actions">
-      <button type="submit" v-on:click="saveMessage()">Save Message</button>
+      <button type="submit">Save Message</button>
     </div>
   </form>
 </template>
@@ -32,7 +32,12 @@ export default {
   },
   methods: {
     saveMessage() {
-
+      // console.log(this.message);
+      messageService.create(this.message).then(response => {
+        if (response.status === 201) {
+          this.$router.push({ name: 'Messages', params: { id: 'this.message.topicId' } })
+        }
+      })
     }
   }
 };
