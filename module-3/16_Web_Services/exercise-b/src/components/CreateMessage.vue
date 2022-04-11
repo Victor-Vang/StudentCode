@@ -32,10 +32,10 @@ export default {
   },
   methods: {
     saveMessage() {
-      // console.log(this.message);
+      console.log(this.message);
       messageService.create(this.message).then(response => {
         if (response.status === 201) {
-          this.$router.push({ name: 'Messages', params: { id: 'this.message.topicId' } })
+          this.$router.push({ name: 'Messages', params: { id: this.message.topicId } })
         }
       })
     }

@@ -41,8 +41,8 @@ export default {
     }
   },
   created() {
+    console.log("reached TopicDetails.vue", this.topicId)
     topicService
-    console.log(this.topicId)
       .get(this.topicId)
       .then(response => {
         this.$store.commit("SET_ACTIVE_TOPIC", response.data);

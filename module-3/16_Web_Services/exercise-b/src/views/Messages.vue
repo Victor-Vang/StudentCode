@@ -13,7 +13,7 @@ export default {
     TopicDetails
   },
   created() {
-    console.log("in messages.vue", this.$route.params.id)
+    console.log("Reached Messages.vue", this.$route.params.id)
   }
 };
 </script>
